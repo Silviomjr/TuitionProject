@@ -1,0 +1,43 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="card">
+    <section 
+        class="avatar" 
+        style="background: url('{{ teacher.avatar_url }}') no-repeat center center / cover;">
+    </section>
+    
+    <section class="informations">
+        <form method="POST" action="/teachers?_method=PUT">
+            
+                <h3>Editar dados do Professor</h3>
+                {% include 'teachers/fields.njk'%}
+                
+
+                <input type="hidden" name="id" value={{teacher.id}}>
+        </form>
+
+        <form class="form-delete" action="/teachers?_method=DELETE" method="post">
+            <input type="hidden" name="id" value={{teacher.id}}>
+            <button type="submit">Deletar</button>
+        </form>
+
+        <script>
+            const formDelete = document.querySelector('.form-delete');
+            formDelete.addEventListener("submit", (event) => {
+                const confirmation = confirm("Deseja Deletar?");
+                
+                if(!confirmation) {
+                    event.preventDefault();
+                };
+            })
+        </script>
+    
+    </section>
+
+</div>
+    
+    
+    
+{% endblock%}

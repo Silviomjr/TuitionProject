@@ -1,0 +1,127 @@
+<div class="item">
+    <div>
+        URL do Avatar
+    </div>
+    <div>
+        <input 
+            type="url"
+            name="avatar_url"
+            placeholder="https://"
+            value="{{ teacher.avatar_url }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Nome completo
+    </div>
+    <div>
+        <input 
+            type="text"
+            name="name"
+            placeholder="Insira seu nome"
+            value="{{ teacher.name }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Data de Nascimento
+    </div>
+    <div>
+        <input 
+            type="date"
+            name="birth"
+            value="{{ teacher.date }}"
+            >
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Escolaridade
+    </div>
+    <div>
+        <select name="graduation_level">
+            <option value="high_school"
+                    {% if teacher.graduation_level == "high_school" %}
+                        selected
+                    {% endif %}
+                    >
+                        Ensino Médio Completo
+            </option>
+
+            <option value="graduation"
+                    {% if teacher.graduation_level == "graduation" %}
+                        selected
+                    {% endif %}
+                    >
+                        Ensino Superior Completo
+            </option>
+
+            <option value="mastership"
+                    {% if teacher.graduation_level == "mastership" %}
+                        selected
+                    {% endif %}
+                    >
+                        Mestrado
+            </option>
+
+            <option value="doctorship"
+                    {% if teacher.graduation_level == "doctorship" %}
+                        selected
+                    {% endif %}
+                    >
+                        Doutorado
+            </option>
+
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Tipo de Aula
+    </div>
+    <div class="select_fields">
+        <span>
+            <input 
+                type="radio"
+                name="class_type"
+                value="P"
+                {% if teacher.class_type == "P"%}
+                    checked
+                {% endif %}
+                >Presencial
+        </span>
+        <span>
+            <input 
+                type="radio"
+                name="class_type"
+                value="D"
+                {% if teacher.class_type == "D"%}
+                    checked
+                {% endif %}
+                >À distância
+        </span>
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Área de atuação
+    </div>
+    <div>
+        <input 
+            type="text"
+            name="subjects"
+            placeholder="Insira a sua área de atuação separado por vírgulas"
+            value = "{{ teacher.subjects }}">
+    </div>
+</div>
+
+<button type="submit">Salvar</button>
+
+
+    
+
