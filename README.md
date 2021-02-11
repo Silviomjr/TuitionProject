@@ -11,6 +11,7 @@ This project was built as a challenge of LaunchBase program, by [Rocketseat](www
 * Javascript
 * HTML
 * CSS
+* Postgres
 
 # Usage
 You can simply clone the repository and then:

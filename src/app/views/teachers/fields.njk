@@ -31,8 +31,8 @@
     <div>
         <input 
             type="date"
-            name="birth"
-            value="{{ teacher.date }}"
+            name="birth_date"
+            value="{{ teacher.birth_date }}"
             >
     </div>
 </div>
@@ -42,7 +42,7 @@
         Escolaridade
     </div>
     <div>
-        <select name="graduation_level">
+        <select name="education_level">
             <option value="high_school"
                     {% if teacher.graduation_level == "high_school" %}
                         selected
@@ -114,9 +114,9 @@
     <div>
         <input 
             type="text"
-            name="subjects"
+            name="subjects_taught"
             placeholder="Insira a sua área de atuação separado por vírgulas"
-            value = "{{ teacher.subjects }}">
+            value = "{{ teacher.subjects_taught }}">
     </div>
 </div>
 

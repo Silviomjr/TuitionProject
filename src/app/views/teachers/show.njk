@@ -12,12 +12,12 @@
 
             <div class="item">
                 <div>Idade</div>
-                <div>{{teacher.age}} anos</div>
+                <div>{{teacher.birth_date}} anos</div>
             </div>
 
             <div class="item">
                 <div>Escolaridade</div>
-                <div>{{teacher.graduation}}</div>
+                <div>{{teacher.education_level}}</div>
             </div>
 
             <div class="item">
@@ -28,7 +28,7 @@
             <div class="item">
                 <div>Acompanhamento</div>
                 <div>
-                    {% for subject in teacher.subjects %}
+                    {% for subject in teacher.subjects_taught %}
                         <span>{{subject}}</span>
                     {% endfor %}
                 </div>
