@@ -287,4 +287,73 @@ tr {
     margin-bottom: 10px;
 }
 
+.header {
+    display: flex;
+    margin-bottom: 32px;
+    justify-content: space-between;
+}
+
+.header a {
+    margin: 0;
+}
+
+.header .filter {
+    display: flex;
+}
+
+
+
+.header .filter input {
+    margin: 0;
+    width: 250px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding-left: 8px;
+}
+
+.header .filter button {
+    margin-top: 0;
+    margin-left: 8px;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: var(--secundary-color70);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 120px;
+    
+}
+
+.pagination {
+    margin: 24px auto;
+    
+}
+
+.table-container .pagination a {
+    background-color: var(--normal-letter);
+}
+
+.table-container .pagination a:hover,
+.table-container .pagination a.selected
+ {
+    background-color: var(--bold-letter);
+    transition: 200ms;
+}
+
+.pagination a + a {
+    margin-left: 8px;
+}
+
+.pagination span {
+    margin: 0 8px;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+}
+
 

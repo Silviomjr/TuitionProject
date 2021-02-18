@@ -4,9 +4,35 @@ const Teacher = require('../models/Teacher');
 
 module.exports = {
     index (req, res) {
-        Teacher.all((teachers) => {
-            return res.render('teachers/index', { teachers });
-        });
+        let { filter, page, limit } = req.query;
+
+        page = page || 1;
+        limit = limit || 2;
+
+        let offset = limit * (page - 1);
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(teachers) {
+                const pagination = {
+                    total: Math.ceil(teachers[0].total / limit),
+                    page
+                };
+
+                teachers.map((teacher) => {
+                    teacher.subjects_taught = teacher.subjects_taught.split(',');
+                });
+
+                return res.render("teachers/index", { teachers, pagination, filter })
+            }
+        }
+
+
+
+        Teacher.paginate(params);
     },
     create (req, res) {
         return res.render("teachers/create");
